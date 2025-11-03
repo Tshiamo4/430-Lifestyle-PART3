@@ -44,6 +44,7 @@ Based on the project plan:
   - Added media queries for tablet and mobile responsiveness.  
   - Included hover and interactive styles for buttons and navigation.  
   - README.md updated with changelog, references, and responsive screenshots (to be added).  
+<img width="1051" height="700" alt="image" src="https://github.com/user-attachments/assets/95d637c2-20a6-41a2-bd82-fe20df54104a" />
 
 ## References
 - 430 Lifestyle (2025) *Instagram.* Available at: https://www.instagram.com/430_lifestyle  
@@ -51,3 +52,4 @@ Based on the project plan:
 - Coolors (2025) *Color Palette Generator.* Available at: https://coolors.co  
 - Shopify (2025) *Shopify Documentation.* Available at: https://help.shopify.com  
 - WooCommerce (2025) *WooCommerce Documentation.* Available at: https://woocommerce.com/documentation  
+
