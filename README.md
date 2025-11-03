@@ -35,6 +35,7 @@ Based on the project plan:
 | Development         | Aug 16–25    |
 | Testing             | Aug 26–29    |
 | Launch              | Aug 30       |
+<img width="1123" height="672" alt="image" src="https://github.com/user-attachments/assets/ea0ff1ff-12a5-4967-a259-0aaf0ccf6049" />
 
 ## Changelog
 - **Part 1 Feedback Implemented:** Adjusted brand mission/vision clarity, added blog & event functionality, refined technical requirements.  
@@ -52,4 +53,5 @@ Based on the project plan:
 - Coolors (2025) *Color Palette Generator.* Available at: https://coolors.co  
 - Shopify (2025) *Shopify Documentation.* Available at: https://help.shopify.com  
 - WooCommerce (2025) *WooCommerce Documentation.* Available at: https://woocommerce.com/documentation  
+
 
