@@ -1,0 +1,544 @@
+/* wrapper stylesheet - loads the main styles from project root */
+@import url('../styles.css');
+
+/* Future customisations for site-wide overrides go here */
+
+/* Modern responsive stylesheet inspired by clean streetwear sites */
+
+/* Import font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Layout helpers */
+:root{
+  --bg: #ffffff;
+  --text: #0a0a0a;
+  --muted: #7a7a7a;
+  --accent: #222222;
+  --container-max: 1100px;
+  --radius: 10px;
+
+  /* animation tokens */
+  --anim-base: 380ms;
+  --anim-ease: cubic-bezier(.2,.9,.2,1);
+  --reveal-stagger: 80ms;
+}
+
+/* smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Montserrat', system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  font-size: 16px;
+}
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* Header & Nav */
+header {
+  border-bottom: 1px solid #eee;
+  padding: 2rem 0 1rem;
+  background: transparent;
+}
+
+header .logo {
+  max-width: 120px;
+  display: block;
+  margin: 0.5rem auto 1rem;
+}
+
+header h1 {
+  text-align: center;
+  font-size: 1.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2.25rem;
+  margin-top: 1rem;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  padding: 0.25rem 0;
+  transition: color .18s ease, border-bottom .18s ease, transform .12s ease;
+  border-bottom: 2px solid transparent;
+  position: relative;
+  overflow: visible;
+}
+
+/* Link pseudo-classes for accessibility and grading */
+nav a:link { color: var(--text); }
+nav a:visited { color: #444; opacity: .95; }
+nav a:hover,
+nav a:focus {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+  outline: none;
+}
+nav a:active { transform: translateY(1px); }
+
+nav a.active {
+  color: var(--accent-dark);
+  border-bottom-color: var(--accent-dark);
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 0%;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 4px;
+  transform: translateX(-50%);
+  transition: width var(--anim-base) var(--anim-ease), background .18s ease;
+}
+nav a:hover::after,
+nav a:focus::after,
+nav a.active::after {
+  width: 70%;
+  background: var(--accent);
+}
+
+/* Hero / Sections */
+section {
+  background: #faf9f6;
+  margin: 2.25rem auto;
+  padding: 2.25rem;
+  border-radius: var(--radius);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.06);
+}
+
+.hero {
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 2.25rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: .5rem;
+}
+
+.lead {
+  text-align: center;
+  color: var(--muted);
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  opacity: 0;
+  transform: translateY(14px);
+  animation: slideUp var(--anim-base) var(--anim-ease) both;
+  animation-delay: 120ms;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+/* Gallery */
+.gallery-grid {
+  display: flex;
+  gap: 1.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+figure {
+  width: 320px;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.06);
+  transition: transform .18s ease, box-shadow .18s ease;
+  cursor: pointer;
+}
+
+figure:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 48px rgba(0,0,0,0.12);
+}
+
+figure img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+
+figcaption {
+  padding: 0.9rem 1rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Product grid */
+.product-grid {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.product-card {
+  width: 340px;
+  background: #fff;
+  border-radius: 14px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 8px 28px rgba(191,161,74,0.06);
+  transition: transform .18s ease, box-shadow .18s ease;
+  will-change: transform, opacity;
+}
+
+.product-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  background: #faf9f6;
+}
+
+.product-card h3 {
+  font-size: 1.15rem;
+  letter-spacing: .06em;
+  margin-bottom: .4rem;
+  text-transform: uppercase;
+}
+
+.product-card .price {
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: .6rem;
+}
+
+/* Hover pop */
+.product-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 48px rgba(191,161,74,0.12);
+}
+
+/* subtle image hover zoom */
+figure img, .product-card img {
+  transition: transform var(--anim-base) var(--anim-ease), filter .3s ease;
+}
+figure:hover img, .product-card:hover img {
+  transform: scale(1.03);
+}
+
+/* Google form link CTA */
+.form-cta { text-align: center; margin-top: 1.5rem; }
+
+.google-form-link {
+  display: inline-block;
+  padding: 0.95rem 2.25rem;
+  background: var(--gold);
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow: 0 8px 30px rgba(191,161,74,0.12);
+  transition: transform .14s ease, background .14s ease, color .14s ease;
+}
+
+.google-form-link:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 18px 36px rgba(0,0,0,0.12);
+}
+
+.google-form-link:focus {
+  background: var(--accent-dark);
+  color: var(--gold);
+  transform: translateY(-4px);
+  outline: none;
+}
+
+/* Contact and map */
+.contact-section p a {
+  color: var(--accent-dark);
+  text-decoration: underline;
+}
+
+/* Contact form styles - formal, monochrome */
+.contact-form {
+  max-width: 760px;
+  margin: 1.25rem auto 0;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+  border: 1px solid #eee;
+}
+
+.contact-form label {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--text);
+  margin-bottom: 0.35rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form input[type="number"],
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid #ddd;
+  background: #fafafa;
+  color: var(--text);
+  border-radius: 8px;
+  margin-bottom: 0.9rem;
+  font-size: 0.98rem;
+  transition: border-color .12s ease, box-shadow .12s ease;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  background: #fff;
+}
+
+.contact-form textarea { resize: vertical; }
+
+/* inline error */
+.contact-form .error {
+  color: #a33;
+  font-size: 0.85rem;
+  min-height: 1.2rem;
+  display: block;
+  margin-top: -0.6rem;
+  margin-bottom: 0.6rem;
+}
+
+/* submit button (monochrome) */
+.google-form-link, .contact-form button[type="submit"] {
+  display: inline-block;
+  padding: 0.9rem 2rem;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  transition: transform .12s ease, background .12s ease, box-shadow .12s ease;
+  text-decoration: none;
+}
+
+.google-form-link:hover,
+.contact-form button[type="submit"]:hover,
+.google-form-link:focus,
+.contact-form button[type="submit"]:focus {
+  transform: translateY(-3px);
+  background: #111;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  outline: none;
+}
+
+/* form success */
+.form-success {
+  max-width: 760px;
+  margin: 1rem auto 0;
+  padding: 0.9rem 1rem;
+  border-radius: 8px;
+  background: #f6f6f6;
+  color: var(--text);
+  border: 1px solid #e8e8e8;
+  font-weight: 600;
+}
+
+/* ensure monochrome image presentation */
+figure img, .product-card img {
+  filter: none;
+  background: #fff;
+}
+
+/* Responsive navigation and layout */
+@media (max-width: 900px) {
+  nav ul {
+    gap: 1.25rem;
+    flex-wrap: wrap;
+  }
+
+  .gallery-grid, .product-grid {
+    gap: 1rem;
+  }
+
+  figure, .product-card {
+    width: 48vw;
+    min-width: 220px;
+  }
+}
+
+@media (max-width: 700px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: .6rem;
+  }
+
+  header h1 { font-size: 1.2rem; }
+  .hero h2 { font-size: 1.4rem; }
+  section { padding: 1rem; margin: 1rem 0; border-radius: 10px; }
+
+  figure, .product-card {
+    width: 95vw;
+    margin: 0 auto;
+  }
+
+  .product-card img, figure img {
+    height: 220px;
+  }
+
+  .contact-form { padding: 1rem; margin: 0.8rem; }
+  .google-form-link, .contact-form button[type="submit"] { width: 100%; text-align: center; }
+}
+
+/* Lightbox styles */
+.lightbox.hidden { display:none; }
+.lightbox {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10,10,10,0.85);
+  z-index: 1200;
+  padding: 2rem;
+  animation: fadeIn .18s ease both;
+}
+
+.lightbox figure {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0;
+  text-align: center;
+}
+
+.lightbox img {
+  max-height: 80vh;
+  width: auto;
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+
+.lightbox figcaption {
+  color: #eee;
+  margin-top: 0.8rem;
+  font-weight: 600;
+}
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.25rem 0.6rem;
+  line-height: 1;
+  transition: transform .12s ease;
+}
+.lightbox-close { top: 18px; right: 20px; }
+.lightbox-prev { left: 18px; top: 50%; transform: translateY(-50%); font-size: 2.4rem; }
+.lightbox-next { right: 18px; top: 50%; transform: translateY(-50%); font-size: 2.4rem; }
+.lightbox-close:hover,
+.lightbox-prev:hover,
+.lightbox-next:hover { transform: scale(1.06); }
+
+/* subtle reveal animation for gallery and product cards */
+.reveal {
+  transform: translateY(16px);
+  opacity: 0;
+  transition: transform .48s cubic-bezier(.2,.9,.2,1), opacity .48s ease;
+}
+.reveal.in-view {
+  transform: none;
+  opacity: 1;
+}
+
+/* keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ensure lightbox controls responsive */
+@media (max-width:700px) {
+  .lightbox-prev, .lightbox-next { display: none; }
+  .lightbox img { max-height: 60vh; }
+}
+
+/* Changelog */
+## Version 1.0 – Initial Submission
+  - Created folder structure (HTML, CSS, JS, Assets).
+  - Added Home, About, Products, Enquiry, Contact, and Gallery pages.
+  - Drafted README with project details.
+
+## Part 2 – Styling & Responsive (2025-08-27)
+  - Added central stylesheet wrapper: `css/style.css` (imports `styles.css`) to standardise linking across pages.
+  - Kept `styles.css` (root) as the canonical stylesheet content for development and caching; wrapper enables consistent path usage.
+  - Updated HTML pages to use the new path:
+    - [index.html](index.html)
+    - [about.html](about.html)
+    - [gallery.html](gallery.html)
+    - [product_services.html](product_services.html)
+    - [contact_us.html](contact_us.html)
+  - Improvements applied: responsive navigation, product/gallery grids, contact form styling, lightbox controls, focus and hover states.
+  - Notes: verify `css/style.css` and `styles.css` are both present before pushing. Remove duplication later by moving full CSS into `css/style.css` if desired.

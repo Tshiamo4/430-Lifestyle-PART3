@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>430 Lifestyle | Gallery</title>
+  <meta name="description" content="Gallery — 430 Lifestyle curated looks and product photography.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>430 Lifestyle</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="product_services.html">Products</a></li>
+          <li><a href="gallery.html" class="active">Gallery</a></li>
+          <li><a href="contact_us.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="container">
+      <h2>Gallery</h2>
+      <p class="lead">A curated selection of recent shoots and product imagery. Click any image to open the lightbox.</p>
+
+      <div class="gallery-grid">
+        <!-- each figure has data-full for the large source -->
+        <figure class="reveal" data-full="_image/SERENGETI.png">
+          <img src="_image/SERENGETI.png" alt="SERENGETI — Hoodie" loading="lazy">
+          <figcaption>SERENGETI — Hoodie</figcaption>
+        </figure>
+
+        <figure class="reveal" data-full="_image/VEE.png">
+          <img src="_image/VEE.png" alt="VEE — Tracksuit" loading="lazy">
+          <figcaption>VEE — Tracksuit</figcaption>
+        </figure>
+
+        <figure class="reveal" data-full="_image/FOREST.png">
+          <img src="_image/FOREST.png" alt="FOREST — Look" loading="lazy">
+          <figcaption>FOREST — Look</figcaption>
+        </figure>
+
+        <figure class="reveal" data-full="_image/MANGO.png">
+          <img src="_image/MANGO.png" alt="MANGO — Tee" loading="lazy">
+          <figcaption>MANGO — Tee</figcaption>
+        </figure>
+
+        <figure class="reveal" data-full="_image/23.png">
+          <img src="_image/23.png" alt="23 — Editorial" loading="lazy">
+          <figcaption>23 — Editorial</figcaption>
+        </figure>
+
+        <figure class="reveal" data-full="_image/DRAMA.png">
+          <img src="_image/DRAMA.png" alt="DRAMA — Statement Tee" loading="lazy">
+          <figcaption>DRAMA — Statement Tee</figcaption>
+        </figure>
+
+        <figure class="reveal" data-full="_image/EURO TOUR.png">
+          <img src="_image/EURO TOUR.png" alt="EURO TOUR — Drop" loading="lazy">
+          <figcaption>EURO TOUR — Drop</figcaption>
+        </figure>
+
+        <figure class="reveal" data-full="_image/JMAN.png">
+          <img src="_image/JMAN.png" alt="JMAN — Street Look" loading="lazy">
+          <figcaption>JMAN — Street Look</figcaption>
+        </figure>
+
+        <figure class="reveal" data-full="_image/Screenshot 2025-08-27 143307.png">
+          <img src="_image/Screenshot 2025-08-27 143307.png" alt="Behind the scenes team" loading="lazy">
+          <figcaption>Team — Behind the Scenes</figcaption>
+        </figure>
+
+        <figure class="reveal" data-full="_image/logo.png">
+          <img src="_image/logo.png" alt="430 Lifestyle logo" loading="lazy">
+          <figcaption>430 Lifestyle — Logo</figcaption>
+        </figure>
+
+        <figure class="reveal" data-full="_image/430pic1.png">
+          <img src="_image/430pic1.png" alt="430 Lifestyle — Hero image" loading="lazy">
+          <figcaption>Hero — Streetwear Composition</figcaption>
+        </figure>
+
+        <figure class="reveal" data-full="_image/Screenshot 2025-08-27 143447.png">
+          <img src="_image/Screenshot 2025-08-27 143447.png" alt="Event showcase" loading="lazy">
+          <figcaption>Event — Showcase</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Lightbox modal (keeps markup inside main for semantics) -->
+    <div id="lightbox" class="lightbox hidden" aria-hidden="true" role="dialog" aria-label="Image preview">
+      <div class="lightbox-inner" role="document">
+        <button class="lightbox-close" aria-label="Close">&times;</button>
+        <button class="lightbox-prev" aria-label="Previous">‹</button>
+        <figure>
+          <img src="" alt="">
+          <figcaption></figcaption>
+        </figure>
+        <button class="lightbox-next" aria-label="Next">›</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 430 Lifestyle. All rights reserved.</p>
+    </div>
+    <script src="gallery-lightbox.js" defer></script>
+  </footer>
+</body>
+</html>
