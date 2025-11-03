@@ -67,6 +67,7 @@ contact.html   → Contact
 ```
 
 ---
+<img width="1497" height="817" alt="image" src="https://github.com/user-attachments/assets/9e6a236b-8acf-43f0-9b71-f5a680f61772" />
 
 ## Changelog  
 **Version 1.0 – Initial Submission**  
